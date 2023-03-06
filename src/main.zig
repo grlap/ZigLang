@@ -27,10 +27,6 @@ pub fn main() anyerror!void {
     var pg_2 = try perm_generator.PermutationGenerator.create(allocator, 4);
     defer pg_2.destroy();
 
-    _ = pg_1;
-
-    _ = pg_2;
-
     var perm = pg_1.next();
     
     while (perm != null) {
@@ -54,7 +50,7 @@ pub fn main() anyerror!void {
     var p: *u8 = undefined;
 
     p = &foo;
-    p.* += 1;
+    p.* += 2;
     p = &bar;
     p.* += 1;
     std.debug.print("foo={}, bar={}\n", .{ foo, bar });

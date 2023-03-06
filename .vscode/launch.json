@@ -7,8 +7,16 @@
         {
             "type": "lldb",
             "request": "launch",
-            "name": "Debug",
+            "name": "Launch",
             "program": "${workspaceFolder}/zig-out/bin/zig_example",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type":"lldb",
+            "request": "launch",
+            "name": "Debug",
+            "program": "/Users/greg/GitHub/Personal/ZigLang",
             "args": [],
             "cwd": "${workspaceFolder}"
         }
