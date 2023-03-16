@@ -13,7 +13,8 @@
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [],
-            "console": "externalTerminal"
+            "console": "externalTerminal",
+            "preLaunchTask": "Build",
         },
         {
             "type": "lldb",
@@ -21,7 +22,8 @@
             "name": "Launch",
             "program": "${workspaceFolder}/zig-out/bin/zig_example",
             "args": [],
-            "cwd": "${workspaceFolder}"
+            "cwd": "${workspaceFolder}",
+            "preLaunchTask": "Build",
         },
         {
             "name": "(lldb) Launch",
@@ -34,7 +36,7 @@
             "environment": [],
             "externalConsole": false,
             "MIMode": "lldb",
-            "preLaunchTask": "Build"
+            "preLaunchTask": "Build",
         }
     ]
 }

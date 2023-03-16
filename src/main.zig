@@ -1,8 +1,18 @@
 const std = @import("std");
 const perm_generator = @import("permutation_generator.zig");
+const io = @import("IO.zig");
+
+const assert = std.debug.assert;
+const os = std.os;
+const linux = os.linux;
+const IO_Uring = linux.IO_Uring;
+const io_uring_cqe = linux.io_uring_cqe;
+const io_uring_sqe = linux.io_uring_sqe;
+const log = std.log.scoped(.io);
 
 
 pub fn main() anyerror!void {
+
     var num1: u8 = 5;
     var num1_pointer: *u8 = &num1;
 
@@ -11,6 +21,9 @@ pub fn main() anyerror!void {
     // Please make num2 equal 5 using num1_pointer!
     // (See the "cheatsheet" above for ideas.)
     num2 = num1_pointer.*;
+
+    var io_handler: io.IO = try io.IO.init();
+    defer io_handler.deinit();
 
     // Permutations.
     //
